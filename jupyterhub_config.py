@@ -21,3 +21,9 @@ c.JupyterHub.hub_port = 8080
 c.JupyterHub.port = 443
 c.JupyterHub.ssl_key = os.environ['SSL_KEY']
 c.JupyterHub.ssl_cert = os.environ['SSL_CERT']
+
+c.JupyterHub.tornado_settings = {
+    'headers': {
+        'Content-Security-Policy': "frame-ancestors 'self' http://localhost:4200"
+  }
+}
