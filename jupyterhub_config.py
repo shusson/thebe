@@ -3,7 +3,7 @@ import os
 c.JupyterHub.authenticator_class = 'oauthenticator.auth0.Auth0OAuthenticator'
 
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
-c.DockerSpawner.container_image = 'shusson/jspawn'
+c.DockerSpawner.container_image = 'shusson/thebe-hail:1.0'
 
 network_name = os.environ['COMPOSE_PROJECT_NAME'] + '_default'
 c.DockerSpawner.network_name = network_name
