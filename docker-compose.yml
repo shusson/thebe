@@ -1,0 +1,24 @@
+version: "3"
+services:
+  hub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jupyterhub
+    container_name: jupyterhub
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:rw"
+      - "data:/data"
+    ports:
+      - "443:443"
+    environment:
+      AUTH0_SUBDOMAIN: ${AUTH0_SUBDOMAIN}
+      OAUTH_CLIENT_ID: ${OAUTH_CLIENT_ID}
+      OAUTH_CLIENT_SECRET: ${OAUTH_CLIENT_SECRET}
+      OAUTH_CALLBACK_URL: ${OAUTH_CALLBACK_URL}
+      COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME}
+    command: >
+      jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
+
+volumes:
+  data:
