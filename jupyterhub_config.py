@@ -18,12 +18,13 @@ c.DockerSpawner.extra_create_kwargs.update({ 'command': 'start-singleuser.sh' })
 c.JupyterHub.hub_ip = 'jupyterhub'
 c.JupyterHub.hub_port = 8080
 
-c.JupyterHub.port = 443
+c.JupyterHub.port = 7777
 c.JupyterHub.ssl_key = os.environ['SSL_KEY']
 c.JupyterHub.ssl_cert = os.environ['SSL_CERT']
 
+
 c.JupyterHub.tornado_settings = {
     'headers': {
-        'Content-Security-Policy': "frame-ancestors 'self' http://localhost:4200"
+        'Content-Security-Policy': "frame-ancestors 'self' http://localhost:4200 https://staging-sgc.kccg.garvan.org.au"
   }
 }

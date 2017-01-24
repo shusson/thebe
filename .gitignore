@@ -1,0 +1,7 @@
+.env
+.idea/
+dockerspawner/
+jupyterhub.crt
+jupyterhub.key
+oauthenticator/
+secrets/

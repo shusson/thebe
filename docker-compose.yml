@@ -10,7 +10,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:rw"
       - "data:/data"
     ports:
-      - "443:443"
+      - "7777:7777"
     environment:
       AUTH0_SUBDOMAIN: ${AUTH0_SUBDOMAIN}
       OAUTH_CLIENT_ID: ${OAUTH_CLIENT_ID}
